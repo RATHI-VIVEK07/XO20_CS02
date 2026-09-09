@@ -2,10 +2,16 @@ from src.event_generator import generate_event, IDENTITIES
 from src.baseline_guard import BaselineGuard
 from src.trust_engine import TrustEngine
 
-guard = BaselineGuard()
+guards = {identity: BaselineGuard() for identity in IDENTITIES}
 trust = TrustEngine()
 
 print("=== Adaptive Behavioural Trust Engine ===")
+
+suspicious_count = {
+    "service_A": 1,
+    "service_B": 2,
+    "service_C": 3
+}
 
 for identity in IDENTITIES:
     print(f"\nIdentity: {identity}")
@@ -19,7 +25,7 @@ for identity in IDENTITIES:
             "WRITE": 15
         }[event["action"]]
 
-        result = guard.check(activity)
+        result = guards[identity].check(activity)
         score, risk = trust.evaluate(identity, result)
 
         print(
@@ -30,12 +36,12 @@ for identity in IDENTITIES:
             f"Risk: {risk}"
         )
 
-    # Simulate a sudden abnormal behavior
-    suspicious_activity = 40
-    result = guard.check(suspicious_activity)
-    score, risk = trust.evaluate(identity, result)
+    for _ in range(suspicious_count[identity]):
+        suspicious_activity = 40
+        result = guards[identity].check(suspicious_activity)
+        score, risk = trust.evaluate(identity, result)
 
-    print(
-        f"Action: ABNORMAL | Resource: sensitive_api | "
-        f"Result: {result} | Trust: {score} | Risk: {risk}"
-    )
+        print(
+            f"Action: ABNORMAL | Resource: sensitive_api | "
+            f"Result: {result} | Trust: {score} | Risk: {risk}"
+        )
