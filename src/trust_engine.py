@@ -1,6 +1,6 @@
 class TrustEngine:
 
-    def _init_(self):
+    def __init__(self):
         self.trust_score = 100
 
     def evaluate(self, result):

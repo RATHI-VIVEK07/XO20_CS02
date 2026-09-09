@@ -1,5 +1,5 @@
-from.baseline_guard import BaselineGuard
-from.trust_engine import TrustEngine
+from src.baseline_guard import BaselineGuard
+from src.trust_engine import TrustEngine
 
 guard = BaselineGuard()
 trust = TrustEngine()
