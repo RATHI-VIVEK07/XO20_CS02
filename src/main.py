@@ -16,3 +16,4 @@ for activity in activities:
         f"Trust Score: {score} | "
         f"Risk: {risk}"
     )
+    
