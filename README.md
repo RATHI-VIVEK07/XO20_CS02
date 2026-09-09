@@ -1,4 +1,26 @@
+<<<<<<< HEAD
 # Adaptive Behavioural Trust for Non-Human Identities
+=======
+g valid credentials.
+-   Attackers can introduce small changes gradually to avoid detection.
+-   Blindly accepting new behaviour can allow malicious activity to
+    become part of the trusted baseline.
+
+Therefore, the system must continuously learn individual NHI behaviour
+while distinguishing **legitimate workload evolution from potentially
+compromised behaviour**.
+
+------------------------------------------------------------------------
+
+## 2. Proposed Solution
+
+We propose a **real-time adaptive behavioural trust system** that
+creates and maintains a separate behavioural profile for every NHI.
+
+The system continuously monitors activity, compares current behaviour
+with the identity's historical profile, calculates a dynamic trust/risk
+score, and classifies the identity into one of # Adaptive Behavioural Trust for Non-Human Identities
+>>>>>>> 0deb584 (Add synthetic identity event generator)
 
 ## PS02 --- Cybersecurity Hackathon
 
@@ -25,6 +47,7 @@ The main security challenge is that:
 
 -   Legitimate software or workload changes can cause an NHI to change
     its behaviour.
+<<<<<<< HEAD
 -   A compromised NHI can continue using valid credentials.
 -   Attackers can introduce small changes gradually to avoid detection.
 -   Blindly accepting new behaviour can allow malicious activity to
@@ -44,6 +67,9 @@ creates and maintains a separate behavioural profile for every NHI.
 The system continuously monitors activity, compares current behaviour
 with the identity's historical profile, calculates a dynamic trust/risk
 score, and classifies the identity into one of four states:
+=======
+-   A compromised NHI can continue usinfour states:
+>>>>>>> 0deb584 (Add synthetic identity event generator)
 
 -   🟢 **NORMAL**
 -   🟡 **DRIFTING**
