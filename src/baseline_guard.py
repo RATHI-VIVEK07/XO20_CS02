@@ -29,5 +29,4 @@ if __name__ == "__main__":
             f"Activity: {activity} | "
             f"Baseline: {guard.baseline:.2f} | "
             f"Result: {result}"
-        )
-        
+        )    
